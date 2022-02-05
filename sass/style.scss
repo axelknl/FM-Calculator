@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-bg-color: hsl(222, 26%, 31%);
+    --toggle-bg-color: hsl(223, 31%, 20%);
+    --screen-bg-color: hsl(224, 36%, 15%);
+
+    --primary-key-bg: hsl(30, 25%, 89%);
+    --primary-key-shadow: hsl(28, 16%, 65%);
+
+    --second-key-bg: hsl(225, 21%, 49%);
+    --second-key-shadow: hsl(224, 28%, 35%);
+
+    --third-key-bg: hsl(6, 63%, 50%);
+    --third-key-shadow: hsl(6, 70%, 34%);
+
+    --text-color : hsl(221, 14%, 31%);
+}
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: 'Spartan', sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    color: white;
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 5px;
+
+        p {
+            font-size: 22px;
+        }
+    }
+    
+}
+
+.header .theme {
+    display: flex;
+    flex-direction: row;
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 5px;
+
+        p {
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+    }
+
+    .selector-container {
+        width: 70px;
+        margin-left: 22px;
+
+        .number {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 4px;
+
+            >* {
+                flex: 1;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+
+        .selector {
+            cursor: pointer;
+            background-color: var(--toggle-bg-color);
+            border-radius: 15px;
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+
+            .bubble {
+                width: 15px;
+                height: 15px;
+                border-radius: inherit;
+                background-color: var(--third-key-bg);
+            }
+        }
+    }
+}
+
+.container {
+    padding-top: 96px;
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.screen {
+    position: relative;
+    height: 128px;
+    background-color: var(--screen-bg-color);
+    border-radius: 10px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 35px;
+    overflow: hidden;
+    color: white;
+
+    p {
+        padding-top: 5px;
+        text-align: right;
+        font-size: 45px;
+        
+    }
+}
+
+.grid {
+    background-color: var(--toggle-bg-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 24px;
+    padding: 32px 30px;
+    border-radius: 10px;
+
+    .key {
+        height: 60px;
+        border-radius: 10px;
+        background-color: var(--primary-key-bg);
+        -webkit-box-shadow: 0px 4px 1px 0px var(--primary-key-shadow); 
+        box-shadow: 0px 4px 1px 0px var(--primary-key-shadow);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+
+        p {
+            text-transform: uppercase;
+            color: var(--text-color);
+            font-size: 22px;
+            padding-top: 5px;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .number {
+            font-size: 32px;
+        }
+    }
+
+    .blue-key {
+        background-color: var(--second-key-bg);
+        -webkit-box-shadow: 0px 4px 1px 0px var(--second-key-shadow); 
+        box-shadow: 0px 4px 1px 0px var(--second-key-shadow);
+
+        p {
+            text-transform: uppercase;
+        }
+    }
+
+    .red-key {
+        background-color: var(--third-key-bg);
+        -webkit-box-shadow: 0px 4px 1px 0px var(--third-key-shadow); 
+        box-shadow: 0px 4px 1px 0px var(--third-key-shadow);
+    }
+
+    .reset-key {
+        grid-column: 1/ span 2;
+    }
+
+    .equal-key {
+        grid-column: 3/ span 2;
+    }
+}
+
+@media screen and (max-width : 590px) {
+    .container {
+        padding-top: 28px;
+    }
+
+    body {
+        padding: 0 24px;
+    }
+}
+
+@media screen and (max-width : 490px) {
+    .grid {
+        grid-column-gap: 13px;
+        grid-row-gap: 17px;
+        padding: 24px 24px;
+    }
+
+    .screen {
+        height: 88px;
+        padding: 0 15px;
+        
+        p {
+            font-size: 32px;
+        }
+    }
+
+    .key {
+        p {
+            font-size: 18px!important;
+        }
+
+        .number {
+            font-size: 28px!important;
+        }
+    }
+}
+
+@media screen and (max-width : 425px) {
+    .screen p {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width : 375px) {
+    body {
+        padding: 0 16px;
+    }
+
+    .grid {
+        padding: 18px 18px;
+    }
+
+    .screen p {
+        font-size: 26px;
+    }
+
+}
+
+@media screen and (max-width : 320px) {
+    .grid {
+        padding: 18px 10px;
+    }
+
+    .screen p {
+        font-size: 20px;
+    }
+}

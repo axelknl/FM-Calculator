@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcApp</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+
+        <div id="headerContainer" class="header">
+            <div class="title">
+                <p>calc</p>
+            </div>
+            <div class="theme">
+                <div class="title">
+                    <p>theme</p>
+                </div>
+                <div class="selector-container">
+                    <div class="number">
+                        <p>1</p>
+                        <p>2</p>
+                        <p>3</p>
+                    </div>
+                    <div id="selector" onclick="changeTheme()" class="selector">
+                        <div class="bubble"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="screenContainer" class="screen">
+            <p id="screen"></p>
+        </div>
+
+        <div id="calculator" class="grid">
+            <div class="key"><p class="number">7</p></div>
+            <div class="key"><p class="number">8</p></div>
+            <div class="key"><p class="number">9</p></div>
+            <div class="key blue-key"><p class="white">del</p></div>
+            <div class="key"><p class="number">4</p></div>
+            <div class="key"><p class="number">5</p></div>
+            <div class="key"><p class="number">6</p></div>
+            <div class="key"><p class="number">+</p></div>
+            <div class="key"><p class="number">1</p></div>
+            <div class="key"><p class="number">2</p></div>
+            <div class="key"><p class="number">3</p></div>
+            <div class="key"><p>-</p></div>
+            <div class="key"><p>.</p></div>
+            <div class="key"><p class="number">0</p></div>
+            <div class="key"><p>/</p></div>
+            <div class="key"><p>x</p></div>
+            <div class="key blue-key reset-key"><p class="white">reset</p></div>
+            <div class="key red-key equal-key"><p id="equal" class="white">=</p></div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
